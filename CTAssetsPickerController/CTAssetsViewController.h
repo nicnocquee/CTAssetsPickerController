@@ -29,9 +29,10 @@
 #import <AssetsLibrary/AssetsLibrary.h>
 
 
-
 @interface CTAssetsViewController : UICollectionViewController
 
 @property (nonatomic, strong) ALAssetsGroup *assetsGroup;
+
+- (NSString *)cellIdentifier;
 
 @end

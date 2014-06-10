@@ -201,6 +201,10 @@
                                            failureBlock:failureBlock];
 }
 
+- (Class)assetsViewControllerClass {
+    return [CTAssetsViewController class];
+}
+
 
 #pragma mark - Notifications
 
@@ -388,7 +392,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    CTAssetsViewController *vc = [[CTAssetsViewController alloc] init];
+    CTAssetsViewController *vc = [[[self assetsViewControllerClass] alloc] init];
     vc.assetsGroup = [self.groups objectAtIndex:indexPath.row];
     
     [self.picker pushViewController:vc animated:YES];

@@ -49,7 +49,8 @@ NSString * const CTAssetsPickerSelectedAssetsChangedNotification = @"CTAssetsPic
 
 - (id)init
 {
-    CTAssetsGroupViewController *groupViewController = [[CTAssetsGroupViewController alloc] init];
+    
+    CTAssetsGroupViewController *groupViewController = [[[self groupViewControllerClass] alloc] init];
     
     if (self = [super initWithRootViewController:groupViewController])
     {
@@ -81,6 +82,9 @@ NSString * const CTAssetsPickerSelectedAssetsChangedNotification = @"CTAssetsPic
     [self removeKeyValueObserver];
 }
 
+- (Class)groupViewControllerClass {
+    return [CTAssetsGroupViewController class];
+}
 
 #pragma mark - ALAssetsLibrary
 

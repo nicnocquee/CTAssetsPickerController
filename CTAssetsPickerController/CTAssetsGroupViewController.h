@@ -31,4 +31,6 @@
 
 @interface CTAssetsGroupViewController : UITableViewController
 
+- (Class)assetsViewControllerClass;
+
 @end

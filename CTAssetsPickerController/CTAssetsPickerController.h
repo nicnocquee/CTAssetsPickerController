@@ -84,6 +84,8 @@
  */
 - (void)deselectAsset:(ALAsset *)asset;
 
+- (Class)groupViewControllerClass;
+
 @end
 
 

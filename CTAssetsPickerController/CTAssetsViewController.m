@@ -72,7 +72,7 @@ NSString * const CTAssetsSupplementaryViewIdentifier = @"CTAssetsSupplementaryVi
         self.collectionView.allowsMultipleSelection = YES;
         
         [self.collectionView registerClass:CTAssetsViewCell.class
-                forCellWithReuseIdentifier:CTAssetsViewCellIdentifier];
+                forCellWithReuseIdentifier:[self cellIdentifier]];
         
         [self.collectionView registerClass:CTAssetsSupplementaryView.class
                 forSupplementaryViewOfKind:UICollectionElementKindSectionFooter
@@ -166,6 +166,9 @@ NSString * const CTAssetsSupplementaryViewIdentifier = @"CTAssetsSupplementaryVi
     [self.assetsGroup enumerateAssetsUsingBlock:resultsBlock];
 }
 
+- (NSString *)cellIdentifier {
+    return CTAssetsViewCellIdentifier;
+}
 
 #pragma mark - Collection View Layout
 
@@ -300,7 +303,7 @@ NSString * const CTAssetsSupplementaryViewIdentifier = @"CTAssetsSupplementaryVi
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     CTAssetsViewCell *cell =
-    [collectionView dequeueReusableCellWithReuseIdentifier:CTAssetsViewCellIdentifier
+    [collectionView dequeueReusableCellWithReuseIdentifier:[self cellIdentifier]
                                               forIndexPath:indexPath];
     
     ALAsset *asset = [self.assets objectAtIndex:indexPath.row];
