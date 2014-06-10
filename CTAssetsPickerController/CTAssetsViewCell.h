@@ -34,6 +34,12 @@
 
 @property (nonatomic, assign, getter = isEnabled) BOOL enabled;
 
+@property (nonatomic, strong) ALAsset *asset;
+@property (nonatomic, strong) UIImage *image;
+@property (nonatomic, copy) NSString *type;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, strong) UIImage *videoImage;
+
 - (void)bind:(ALAsset *)asset;
 
 @end
